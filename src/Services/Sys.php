@@ -95,7 +95,10 @@ class Sys
      */
     public function sealed()
     {
-        return json_decode($this->sealStatus()->getBody(), true)['sealed'];
+        if( $this->sealStatus() != null )
+            return json_decode($this->sealStatus()->getBody(), true)['sealed'];
+        else
+            return false;
     }
 
     /**
