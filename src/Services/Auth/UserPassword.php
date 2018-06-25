@@ -15,14 +15,14 @@ class UserPassword extends AuthenticationAbstraction
      * Creates a new user with credentials.
      *
      * @see    https://www.vaultproject.io/api/auth/userpass/index.html#create-update-user
-     * @param array  $body
+     * @param array  $body options := { username | password | policies | ttl | max_ttl | bound_cidrs }
      * @param string $authBackEnd
      * @return mixed
      */
     public function create(array $body = [], $authBackEnd = 'userpass')
     {
         $body = OptionsResolver::resolve($body, [
-            'username', 'password', 'policies', 'ttl', 'max_ttl'
+            'username', 'password', 'policies', 'ttl', 'max_ttl', 'bound_cidrs'
         ]);
         $username = $body['username'];
         $params = [
