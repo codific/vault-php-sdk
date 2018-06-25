@@ -58,6 +58,7 @@ Available services
 * `sys`
 * `data`
 * `auth/token`
+* `auth/userpass`
 * `transit`
 
 License
